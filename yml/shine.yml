@@ -1,1 +1,10 @@
+# SHINE als Domino-Stein, rein deklarativ
+type: shine
+name: SHINE_DOMINO
+active: true
+reason: "Markiert Stellen mit echter Bedeutung"
+scope:
+  - system
+  - user
+  - view
 
