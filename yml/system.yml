@@ -1,1 +1,15 @@
+# System-Überblick, nur Beschreibung
+system:
+  name: SEEÜ
+  spaces:
+    - 4all
+    - 2be4
+    - 8all
+    - shine
+    - moves
+    - x4
+  legal:
+    tracking: false
+    hidden_tech: false
+    scripts: false
 
