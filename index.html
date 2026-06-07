@@ -25,6 +25,7 @@
       text-decoration:none;
       border:1px solid #00eaff;
       color:#00eaff;
+      cursor:pointer;
     }
   </style>
 </head>
@@ -35,8 +36,23 @@
   <a href="/old/index.html">ALT‑ANSICHT</a>
   <a href="/run.html">RUN</a>
   <a href="/list.html">LIST</a>
-  <a href="/shine/shine.respo.html">SHINE</a>
+
+  <!-- SHINE bekommt jetzt eine Abfang-Funktion -->
+  <a id="shineBtn">SHINE</a>
+
+  <script>
+    document.getElementById("shineBtn").onclick = () => {
+      const antwort = prompt("SHINE öffnen?\nOK = Ja\nNEIN = Abbrechen\nVIELLEICHT = Später");
+      if (antwort === null) return; // Abbruch
+      if (antwort.toLowerCase() === "ok") {
+        window.location.href = "/shine/shine.respo.html";
+      } else if (antwort.toLowerCase() === "vielleicht") {
+        alert("Alles klar – wir warten noch.");
+      } else {
+        alert("SHINE wurde nicht geöffnet.");
+      }
+    };
+  </script>
 
 </body>
 </html>
-
