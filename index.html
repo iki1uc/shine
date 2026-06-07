@@ -1,39 +1,15 @@
-<a id="shineBtn">SHINE (RESPO)</a>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SHINE RESPO</title>
+</head>
+<body style="background:#0d0d0f; color:#00eaff; font-family:monospace; text-align:center; padding-top:40px;">
 
-<script>
-  document.getElementById("shineBtn").onclick = () => {
+  <h1>SHINE RESPO MODUL</h1>
+  <p>Dieses Modul wird vom Hauptmenü aus gesteuert.</p>
 
-    // RESPO-SHINE Kern
-    const shine = {
-      name: "SHINE-RESPO",
-      rev: "1.1",
-      state: "EI",
-      pulse() {
-        this.state = "OMELETT";
-        return "OK – SHINE RESPO AKTIV";
-      },
-      deny() {
-        this.state = "SATT";
-        return "NEIN – SHINE ABGELEHNT";
-      },
-      maybe() {
-        this.state = "EI";
-        return "VIELLEICHT – SHINE WARTET";
-      }
-    };
+  <script src="shine.respo.js"></script>
 
-    const antwort = prompt("SHINE RESPO?\nOK / NEIN / VIELLEICHT");
-
-    if (!antwort) return;
-
-    const a = antwort.toLowerCase();
-
-    if (a === "ok") {
-      alert(shine.pulse());
-    } else if (a === "vielleicht") {
-      alert(shine.maybe());
-    } else {
-      alert(shine.deny());
-    }
-  };
-</script>
+</body>
+</html>
