@@ -1,1 +1,34 @@
-1
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>RUN</title>
+  <style>
+    body { background:#000; color:#0ff; font-family:monospace; padding:20px; }
+    a { color:#0ff; }
+  </style>
+</head>
+<body>
+
+<h1>RUN – SYSTEM STATUS</h1>
+
+<p>4ALL: <span id="fourall">loading…</span></p>
+<p>8ALL: <span id="eightall">loading…</span></p>
+<p>TECH: <span id="tech">loading…</span></p>
+
+<a href="/index.html">← zurück</a>
+
+<script type="module">
+  import { FourAll } from "./4all/4all.active.js";
+  import { EightAll } from "./8all/8all.core.js";
+
+  const four = FourAll.status();
+  const eight = EightAll.check();
+
+  document.getElementById("fourall").innerText = "OK";
+  document.getElementById("eightall").innerText = eight.tech && eight.norm ? "OK" : "WARN";
+  document.getElementById("tech").innerText = "v1.0.0";
+</script>
+
+</body>
+</html>
