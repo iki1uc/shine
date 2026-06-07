@@ -1,58 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>NEU INDEX</title>
-  <style>
-    body.new-effect {
-      background:#0d0d0f;
-      color:#00eaff;
-      font-family:monospace;
-      animation:newPulse 1.5s infinite;
-      text-align:center;
-      padding-top:40px;
-    }
-    @keyframes newPulse {
-      0% { filter:brightness(1); }
-      50% { filter:brightness(2.2); }
-      100% { filter:brightness(1); }
-    }
-    a {
-      display:inline-block;
-      margin:10px;
-      padding:8px 16px;
-      border-radius:4px;
-      text-decoration:none;
-      border:1px solid #00eaff;
-      color:#00eaff;
-      cursor:pointer;
-    }
-  </style>
-</head>
-<body class="new-effect">
+<a id="shineBtn">SHINE (RESPO)</a>
 
-  <h1>NEUER INDEX AKTIV</h1>
+<script>
+  document.getElementById("shineBtn").onclick = () => {
 
-  <a href="/old/index.html">ALT‑ANSICHT</a>
-  <a href="/run.html">RUN</a>
-  <a href="/list.html">LIST</a>
-
-  <!-- SHINE bekommt jetzt eine Abfang-Funktion -->
-  <a id="shineBtn">SHINE</a>
-
-  <script>
-    document.getElementById("shineBtn").onclick = () => {
-      const antwort = prompt("SHINE öffnen?\nOK = Ja\nNEIN = Abbrechen\nVIELLEICHT = Später");
-      if (antwort === null) return; // Abbruch
-      if (antwort.toLowerCase() === "ok") {
-        window.location.href = "/shine/shine.respo.html";
-      } else if (antwort.toLowerCase() === "vielleicht") {
-        alert("Alles klar – wir warten noch.");
-      } else {
-        alert("SHINE wurde nicht geöffnet.");
+    // RESPO-SHINE Kern
+    const shine = {
+      name: "SHINE-RESPO",
+      rev: "1.1",
+      state: "EI",
+      pulse() {
+        this.state = "OMELETT";
+        return "OK – SHINE RESPO AKTIV";
+      },
+      deny() {
+        this.state = "SATT";
+        return "NEIN – SHINE ABGELEHNT";
+      },
+      maybe() {
+        this.state = "EI";
+        return "VIELLEICHT – SHINE WARTET";
       }
     };
-  </script>
 
-</body>
-</html>
+    const antwort = prompt("SHINE RESPO?\nOK / NEIN / VIELLEICHT");
+
+    if (!antwort) return;
+
+    const a = antwort.toLowerCase();
+
+    if (a === "ok") {
+      alert(shine.pulse());
+    } else if (a === "vielleicht") {
+      alert(shine.maybe());
+    } else {
+      alert(shine.deny());
+    }
+  };
+</script>
