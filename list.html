@@ -2,25 +2,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>LIST – rtime</title>
+<title>LIST</title>
 <style>
   body{background:#0d0d0f;color:#00eaff;font-family:monospace;text-align:center;padding-top:40px;}
-  pre{background:#111;padding:20px;border:1px solid #00eaff;border-radius:4px;display:inline-block;text-align:left;}
 </style>
 </head>
 <body>
 
-<h1>LIST – rtime</h1>
-
-<pre id="out">warte…</pre>
+<h1>LIST</h1>
+<p id="out">rtime lädt…</p>
 
 <script>
-function updateRtime() {
+function tick(){
   const rtime = new Date().toLocaleTimeString();
-  document.getElementById("out").textContent = "Außenzeit (rtime): " + rtime;
+  document.getElementById("out").textContent = "rtime: " + rtime;
 }
-updateRtime();
-setInterval(updateRtime, 1000);
+setInterval(tick, 1000);
+tick();
 </script>
 
 </body>
