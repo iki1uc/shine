@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>4‑Output</title>
+<title>12‑48 Engine</title>
 <style>
   body{background:#0d0d0f;color:#00eaff;font-family:monospace;text-align:center;padding-top:40px;}
   a{display:inline-block;margin:10px;padding:10px 20px;border:1px solid #00eaff;border-radius:4px;text-decoration:none;color:#00eaff;cursor:pointer;}
@@ -10,12 +10,40 @@
 </head>
 <body>
 
-<h1>4‑AUSWAHL</h1>
+<h1>12‑48 VERKNOTUNG</h1>
 
-<a onclick="alert('Alt: passt.')">ALT</a>
-<a onclick="alert('Run: läuft.')">RUN</a>
-<a onclick="alert('List: steht.')">LIST</a>
-<a onclick="alert('Shine: gut.')">SHINE</a>
+<a onclick="knot('ALT')">ALT</a>
+<a onclick="knot('RUN')">RUN</a>
+<a onclick="knot('LIST')">LIST</a>
+<a onclick="knot('SHINE')">SHINE</a>
+
+<script>
+let djinn = [];
+
+function knot(key) {
+
+  // Jede Taste = andere Technik-Kombi
+  const tech = {
+    ALT:  ["x4", "respo", "pulse"],
+    RUN:  ["x4", "shine", "boost"],
+    LIST: ["scan", "grid", "respo"],
+    SHINE:["djinn", "x4", "48"]
+  };
+
+  // Technik-Kombi in Djinn-Knoten legen
+  djinn.push(tech[key]);
+
+  // Wenn 4 Knoten voll → Zauber erzeugen
+  if (djinn.length === 4) {
+    const flat = djinn.flat();      // 12 Techniken
+    const unique = [...new Set(flat)]; // 12→48 möglich
+    alert("Zauber: " + unique.join(" · "));
+    djinn = [];
+  } else {
+    alert(key + " ok.");
+  }
+}
+</script>
 
 </body>
 </html>
