@@ -1,1 +1,11 @@
+export const SHINE = {
+    active: false,
+    reason: null,
+
+    mark(reason) {
+        this.active = true;
+        this.reason = reason;
+        console.log("SHINE:", reason);
+    }
+};
 
