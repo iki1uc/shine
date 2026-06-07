@@ -1,38 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>RUN – iki1uc</title>
-  <style>
-    body {
-      background:#0d0d0f;
-      color:#00eaff;
-      font-family:monospace;
-      padding:40px;
-    }
-    h1 { text-align:center; }
-    pre {
-      background:#111;
-      padding:20px;
-      border:1px solid #00eaff;
-      border-radius:6px;
-      overflow:auto;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>RUN – itime</title>
+<style>
+  body{background:#0d0d0f;color:#00eaff;font-family:monospace;text-align:center;padding-top:40px;}
+  pre{background:#111;padding:20px;border:1px solid #00eaff;border-radius:4px;display:inline-block;text-align:left;}
+</style>
 </head>
 <body>
 
-<h1>RUN – Systemausführung</h1>
+<h1>RUN – itime</h1>
 
-<p>Diese Seite zeigt den aktuellen Zustand der Module, die RUN auslösen kann.</p>
+<pre id="out">warte…</pre>
 
-<pre>
-[RUN]
-• lädt X‑Module
-• triggert 1.x‑Zustände
-• startet SCAN
-• gibt Respo‑Impulse weiter
-</pre>
+<script>
+function updateItime() {
+  const itime = Math.floor(performance.now());
+  document.getElementById("out").textContent = "innerer Takt (itime): " + itime;
+}
+updateItime();
+setInterval(updateItime, 500);
+</script>
 
 </body>
 </html>
