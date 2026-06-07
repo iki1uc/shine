@@ -1,1 +1,9 @@
+# Mapping von Actions zu Bedeutung
+actions:
+  shine_mark:
+    from: yml/actions.yml
+    description: "Markiert eine Stelle als bedeutungsvoll"
+  shift_focus:
+    from: yml/actions.yml
+    description: "Verschiebt Aufmerksamkeit im System"
 
