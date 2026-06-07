@@ -2,41 +2,53 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>SHINE – iki1uc</title>
+  <title>NEU INDEX</title>
   <style>
     body {
       background:#0d0d0f;
       color:#00eaff;
       font-family:monospace;
-      padding:40px;
       text-align:center;
+      padding-top:40px;
     }
-    h1 { margin-bottom:20px; }
-    pre {
-      background:#111;
-      padding:20px;
-      border:1px solid #00eaff;
-      border-radius:6px;
+    a {
       display:inline-block;
-      text-align:left;
+      margin:10px;
+      padding:10px 20px;
+      border:1px solid #00eaff;
+      border-radius:4px;
+      text-decoration:none;
+      color:#00eaff;
+      cursor:pointer;
     }
   </style>
 </head>
 <body>
 
-<h1>SHINE – RESPO MODUL</h1>
+<h1>4‑KNOPF‑ENTSCHEIDER</h1>
 
-<p>Dieses Modul wird vom Hauptmenü aus ausgelöst.</p>
+<a id="btnAlt">ALT‑ANSICHT</a>
+<a id="btnRun">RUN</a>
+<a id="btnList">LIST</a>
+<a id="btnShine">SHINE</a>
 
-<pre>
-[SHINE]
-• Respo-Modul
-• reagiert auf OK / NEIN / VIELLEICHT
-• nutzt shine.respo.js
-• kein 404 mehr
-</pre>
+<script>
+  document.getElementById("btnAlt").onclick = () => {
+    alert("ALT sagt: 'Ich war schon da, bevor du kamst.'");
+  };
 
-<script src="shine.respo.js"></script>
+  document.getElementById("btnRun").onclick = () => {
+    alert("RUN sagt: 'Sag mir wann – ich laufe sofort los.'");
+  };
+
+  document.getElementById("btnList").onclick = () => {
+    alert("LIST sagt: 'Ich zeige dir alles, was du besitzt.'");
+  };
+
+  document.getElementById("btnShine").onclick = () => {
+    alert("SHINE sagt: 'Ich leuchte, wenn du bereit bist.'");
+  };
+</script>
 
 </body>
 </html>
