@@ -1,4 +1,6 @@
-export function shineSignal(event) {
-    console.log("SHINE SIGNAL:", event);
-}
+// SHINE – Signal
+import { SHINE } from "./shine.core.js";
 
+export function shineSignal(event) {
+  SHINE.mark(event || "unbekannt");
+}
