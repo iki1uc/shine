@@ -1,38 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>LIST – iki1uc</title>
-  <style>
-    body {
-      background:#0d0d0f;
-      color:#00eaff;
-      font-family:monospace;
-      padding:40px;
-    }
-    h1 { text-align:center; }
-    ul { list-style:none; padding:0; }
-    li { margin:6px 0; }
-  </style>
+<meta charset="UTF-8">
+<title>LIST – rtime</title>
+<style>
+  body{background:#0d0d0f;color:#00eaff;font-family:monospace;text-align:center;padding-top:40px;}
+  pre{background:#111;padding:20px;border:1px solid #00eaff;border-radius:4px;display:inline-block;text-align:left;}
+</style>
 </head>
 <body>
 
-<h1>LIST – Dateiübersicht</h1>
+<h1>LIST – rtime</h1>
 
-<p>Alle sichtbaren Dateien im Repository:</p>
+<pre id="out">warte…</pre>
 
-<ul>
-  <li>/index.html</li>
-  <li>/run.html</li>
-  <li>/list.html</li>
-  <li>/shine/shine.respo.html</li>
-  <li>/system/system.flow.js</li>
-  <li>/8all/8all.report.js</li>
-  <li>/x4/shine.evo.look.json</li>
-  <li>/action/map.yml</li>
-  <li>/moves/…</li>
-  <li>/2be4/2be4.tools.js</li>
-</ul>
+<script>
+function updateRtime() {
+  const rtime = new Date().toLocaleTimeString();
+  document.getElementById("out").textContent = "Außenzeit (rtime): " + rtime;
+}
+updateRtime();
+setInterval(updateRtime, 1000);
+</script>
 
 </body>
 </html>
