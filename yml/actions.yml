@@ -1,1 +1,12 @@
+# Deklarierte Aktionen – nur Bedeutung, keine Ausführung
+version: 1
+actions:
+  - id: shine_mark
+    type: marker
+    target: shine
+    reason: "Bedeutung sichtbar"
+  - id: shift_focus
+    type: focus
+    target: system
+    reason: "Aufmerksamkeit verschieben"
 
