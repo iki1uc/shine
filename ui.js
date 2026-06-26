@@ -4,4 +4,3 @@ export function shineUpdate(step) {
     el.textContent = "Aktiv: " + step;
   }
 }
-
